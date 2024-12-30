@@ -1,0 +1,24 @@
+.container{
+    margin:10px;
+    padding:20px;
+
+}
+.container .header{
+    background: yellow;
+    font-size:20px;
+    padding:8px;
+    text-align: center;
+}
+.actions{
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+    gap: 8px;
+    border-bottom:2px solid rgb(162, 156, 156);
+    padding: 10px 0px;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+  }

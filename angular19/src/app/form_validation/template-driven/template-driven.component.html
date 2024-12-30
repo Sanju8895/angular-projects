@@ -1,0 +1,49 @@
+<div class="container">
+    <h2 class="header">Form Validation</h2>
+    <div class="forms">
+        <div class="template-driven">
+            <h2>Template Driven Form</h2>
+            <h3>Form 1</h3>
+            <form #formOne="ngForm"  (ngSubmit)="onSubmit(formOne)">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="user">Username</label>
+                        <input type="text" id="user" name="user" placeholder="Username" autocomplete="off"
+                            class="form-control"  [(ngModel)]="formOneData.user" #user="ngModel" required minlength = '5'>
+                         <div class="error" *ngIf="user.invalid&& user.touched">
+                            <small *ngIf="user.errors?.['required']">User is required...</small>
+                            <small *ngIf="user.errors?.['minlength']">User most be 5 charachtors...</small>
+                         </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email Id" autocomplete="off"
+                            class="form-control"  [(ngModel)]="formOneData.email" #email="ngModel" required >
+                        <div *ngIf="email.invalid && email.touched" class="error">
+                            <small *ngIf="email.errors?.['required']">Email is required...</small>
+                        </div>
+                      
+                    </div>
+                    <div class="col-md-6">
+                        <label for="user">Age</label>
+                        <input type="text" id="age" name="age" placeholder="Age" autocomplete="off"
+                            class="form-control"  [(ngModel)]="formOneData.age" #age="ngModel">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="actions">
+                            <button class="btn btn-warning" (click)="formOne.reset()">Cancel</button>
+                            <button type="Submit"class="btn btn-primary"[disabled]=formOne.invalid >Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <!-- ================================================Reactive form Validation=========================== -->
+        <div class="reactive-form">
+            <h2>Reactive Forms</h2>
+            <app-rective-form></app-rective-form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="container">
+    <h2> Angular 19 Directive:</h2>
+    <p><strong>Note:</strong> directive is a class that adds behavior to elements in your Angular application. There are
+        three main types of directives</p>
+    <ol>
+        <li>Component Directive</li>
+        <li>Attribute Directive</li>
+        <li>Structural Directive</li>
+    </ol>
+
+    <h4>Attibute Directive</h4>
+    <p>NgClass: Adds and removes a set of classes</p>
+    <p>NgStyle: Adds and removes a set of HTML styles</p>
+    <p>NgModel: Adds two way data binding to an HTML form element</p>
+
+    <h4> build-in NgClass Example:</h4>
+    <div [ngClass]="{'active': isActive}">Toggle me!</div>
+    <div [ngClass]="dynamicClasses">Dynamic classes!</div>
+    <h4>Custom ngClass Directive Examples:</h4>
+    <div [appNgClass]="{'custom-active': isActive}">Custom ngClass in actions</div>
+    <hr>
+    <h4> build-in NgStyle Example:</h4>
+    <div [ngStyle]="{'color': textColor, 'font-size': fontSize +'px'}">Dynamic text color</div>
+    <div [ngStyle]="styleObject">Using a style object!</div>
+    <h4>Custom ngStyle Directive Examples:</h4>
+    <div [appNgStyle]="{'color': 'blue', 'background-color': 'lightgray'}">Custom style examples</div>
+
+    <h4>NgModel Example:</h4>
+    <div>Enter Admin Name: <input type="text" [(ngModel)]="name"></div>
+    <div>Admin Name:{{name}}</div>
+
+    <hr>
+    <h1>Structural Directive</h1>
+    <h3>ngIf Directive</h3>
+    <div *ngIf="isActive">Show and Hide this para using this button with ngIf directive  </div>
+    <button class="btn btn-primary" (click)="showHidePara()">Show & hide para</button>
+    <h3>Example 2:</h3>
+    <div *ngIf="isLoggedIn; else loggedOut">Welcome back, user</div>
+    <ng-template #loggedOut>
+        <p>Please login.</p>
+    </ng-template>
+    <button class="btn btn-warning" (click)="loginAction()">{{buttonText}}</button>
+    <h3>Custom ngIf: </h3>
+    <p *appNgIf="isActive">This is ngIf Example</p>
+
+
+</div>

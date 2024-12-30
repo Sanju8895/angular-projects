@@ -1,0 +1,16 @@
+<div class="parent">
+    <h2>Parent Component:</h2>
+    <p>Parent Name: {{parentName}}</p>
+    <p>child 1 name: {{child1Data}}</p>
+    <p>child 2 name: {{child2data}}</p>
+    <p>child 3 name: {{child3data}}</p>
+    <div class="child child1">
+        <app-child1 [data]= parentName  (child1data)="receiveFromchild1($event)"></app-child1>
+    </div>
+    <div class="child child2">
+        <app-child2  (childData)="receiveData($event)"></app-child2>
+    </div>
+    <div class="child child3">
+        <app-child3 [data]="parentName" (child3Event)="receiveFromchild3($event)"></app-child3>
+    </div>
+</div>

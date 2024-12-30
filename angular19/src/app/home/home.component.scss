@@ -1,0 +1,23 @@
+.container{
+    margin:0;
+    padding:0;
+    display: flex;
+    flex: row;
+};
+ol{
+    display: flex;
+}
+
+ol li{
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    background: saddlebrown;
+    padding:8px;
+    margin:10px 5px;
+    text-decoration: none;
+    list-style-type: none;
+}
+ol li:hover{
+    background-color: rgb(166, 90, 35);
+}
